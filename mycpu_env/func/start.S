@@ -47,7 +47,7 @@ test_finish:
     addi.w    t0, t0, 1
     LI        (t2, UART_ADDR)
     st.w      zero, t2, 0
-1：
+1:
     b         1b
 //    .word 0x80000000 // nemu trap
     nop
