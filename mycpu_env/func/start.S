@@ -62,6 +62,8 @@ test_finish:
     or        t2, t0, zero
     add.w     t3, t5, t6
     ld.w      t4, t0, 0
+
+#ifndef SHORT_TEST1
 /*
  *  exception handle
  */
@@ -485,6 +487,8 @@ ex_finish:
     lu12i.w  s2, 0xffff 
 ex_ret:
     ertn
+
+#endif
 
 locate:
 
