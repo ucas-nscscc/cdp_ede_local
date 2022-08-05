@@ -63,7 +63,7 @@ test_finish:
     add.w     t3, t5, t6
     ld.w      t4, t0, 0
 
-#ifndef SHORT_TEST1
+#if (!SHORT_TEST1)
 /*
  *  exception handle
  */
