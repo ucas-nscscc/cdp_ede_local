@@ -106,7 +106,6 @@ module confreg
     reg  [31:0] led_data;
     reg  [31:0] led_rg0_data;
     reg  [31:0] led_rg1_data;
-    reg  [31:0] num_data;
     wire [31:0] switch_data;
     wire [31:0] sw_inter_data; //switch interleave
     wire [31:0] btn_key_data;
