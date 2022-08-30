@@ -117,6 +117,7 @@ wire        conf_we;
 wire [31:0] conf_addr;
 wire [31:0] conf_wdata;
 wire [31:0] conf_rdata;
+wire [15:0] conf_led;
 
 //cpu
 minicpu_top cpu(
@@ -134,7 +135,8 @@ minicpu_top cpu(
     .data_sram_rdata  (cpu_data_rdata)
 );
 
-assign cpu_data_rdata = {24'b0, switch[7:0]};
+assign cpu_data_rdata = (cpu_data_addr == 12'd1024)? {24'b0, ~switch[7:0]} :
+                                                      32'b0;
 
 //inst ram
 inst_ram inst_ram
@@ -153,11 +155,13 @@ confreg u_confreg
     .resetn       ( cpu_resetn ),  // i, 1    
     .conf_we      ( conf_we    ),  // i, 4      
     .conf_wdata   ( conf_wdata ),  // i, 32         
-    .led          ( led        )   // o, 16   
+    .led          ( conf_led   )   // o, 16   
 );
 
-assign conf_we    = cpu_data_we;
+assign conf_we    = cpu_data_we && cpu_data_addr == 12'd1028;
 assign conf_wdata = cpu_data_wdata;
+
+assign led = ~conf_led; 
 
 endmodule
 

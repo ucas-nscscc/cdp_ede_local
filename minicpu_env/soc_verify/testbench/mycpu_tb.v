@@ -52,7 +52,7 @@ always #5 clk=~clk;
 initial 
 begin
     //在这里可以自定义测试输入序列
-    switch = 8'h4;
+    switch = ~(8'h4);
 end
 
 soc_mini_top soc_mini

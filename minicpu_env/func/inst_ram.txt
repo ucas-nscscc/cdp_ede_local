@@ -9,7 +9,7 @@
 1c00001c:       addi.w   $t1,$t2,0x0        //记录f(i) 
 1c000020:       add.w    $s0,$s0,$s1        //i++
 1c000024:       bne      $s0,$a0,loop       //if i!=n, goto loop
-1c000028:       st.w     $t2,$zero,1025     //将f(n)的值输出到数码管上
+1c000028:       st.w     $t2,$zero,1028     //将f(n)的值输出到数码管上
           end:
 1c00002c:       bne      $s1, $zero, end    //测试完毕，进入死循环
 
