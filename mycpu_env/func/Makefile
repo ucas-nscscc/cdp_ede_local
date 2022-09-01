@@ -5,7 +5,6 @@ EXP =
 default: 
 	make all
 	make tidy
-exp6: 
 
 all:
 	mkdir -p ${obj_path}
