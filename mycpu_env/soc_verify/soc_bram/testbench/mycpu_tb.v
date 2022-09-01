@@ -60,6 +60,8 @@ assign btn_step    = 2'd3;
 
 initial
 begin
+    $dumpfile("dump.vcd");
+    $dumpvars;
     clk = 1'b0;
     resetn = 1'b0;
     #2000;
@@ -113,6 +115,7 @@ reg [31:0] ref_wb_pc;
 reg [4 :0] ref_wb_rf_wnum;
 reg [31:0] ref_wb_rf_wdata;
 
+integer a;
 always @(posedge soc_clk)
 begin 
     #1;
@@ -121,7 +124,7 @@ begin
         trace_cmp_flag=1'b0;
         while (!trace_cmp_flag && !($feof(trace_ref)))
         begin
-            $fscanf(trace_ref, "%h %h %h %h", trace_cmp_flag,
+            a = $fscanf(trace_ref, "%h %h %h %h", trace_cmp_flag,
                     ref_wb_pc, ref_wb_rf_wnum, ref_wb_rf_wdata);
         end
     end
