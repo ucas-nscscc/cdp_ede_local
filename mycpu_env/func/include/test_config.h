@@ -33,3 +33,196 @@
 #define TEST8 1
 #define TEST9 1
 
+#ifdef EXP6
+  #define SHORT_TEST1 1
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 0
+  #define TEST3 0
+  #define TEST4 0
+  #define TEST5 0
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP7
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 1
+  #define TEST1 1
+  #define TEST2 0
+  #define TEST3 0
+  #define TEST4 0
+  #define TEST5 0
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP8
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 0
+  #define TEST3 0
+  #define TEST4 0
+  #define TEST5 0
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP9
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 0
+  #define TEST3 0
+  #define TEST4 0
+  #define TEST5 0
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP10
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 0
+  #define TEST4 0
+  #define TEST5 0
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP11
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 0
+  #define TEST5 0
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP12
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 0
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP13
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP14
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP15
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0
+#elif  EXP16
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 0
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0  
+#elif  EXP18
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 1
+  #define TEST7 0
+  #define TEST8 0
+  #define TEST9 0  
+#elif  EXP19
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 1
+  #define TEST7 1
+  #define TEST8 0
+  #define TEST9 0  
+#elif  EXP21
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 1
+  #define TEST7 1
+  #define TEST8 0
+  #define TEST9 0  
+#elif  EXP22
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 1
+  #define TEST7 1
+  #define TEST8 0
+  #define TEST9 0  
+#elif  EXP23
+  #define SHORT_TEST1 0
+  #define NOP_INSERT 0
+  #define TEST1 1
+  #define TEST2 1
+  #define TEST3 1
+  #define TEST4 1
+  #define TEST5 1
+  #define TEST6 1
+  #define TEST7 1
+  #define TEST8 1
+  #define TEST9 0  
+#endif
