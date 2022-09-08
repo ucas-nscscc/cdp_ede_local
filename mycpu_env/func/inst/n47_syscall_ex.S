@@ -3,7 +3,6 @@
 #include "inst_test.h"
 
 LEAF(n47_syscall_ex_test)
-   
   addi.w  s0, s0, 1 
   li.w    t4, 0x2f
   LI_EXIMM(t0,s2,IMM_SYSCALL)

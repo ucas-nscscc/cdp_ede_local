@@ -60,7 +60,6 @@ LEAF(n68_invtlb_0x6_test)
 
 ###detect exception
     bne s2, zero, inst_error
-    nop
 ###score ++
     addi.w s3, s3, 1
 ###output (s0<<24)|s3

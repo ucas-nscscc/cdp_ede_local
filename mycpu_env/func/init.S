@@ -2,7 +2,85 @@
 #include "regdef.h"
 #include "inst_test.h"
 
-LEAF(tlb_initialization)
+LEAF(test4_init)
+  csrwr     zero, csr_prmd 
+  csrwr     zero, csr_era 
+  csrwr     zero, csr_eentry 
+
+  li.w t0, 0x1c008000 
+  csrwr t0, csr_eentry 
+   
+  jirl zero, ra, 0x0
+END(test4_init)
+
+LEAF(test5_init)
+  csrwr     zero, csr_prmd 
+  csrwr     zero, csr_era 
+  csrwr     zero, csr_eentry 
+  csrwr     zero, csr_badv 
+  csrwr     zero, csr_save0 
+  csrwr     zero, csr_save1
+  csrwr     zero, csr_save2 
+  csrwr     zero, csr_save3 
+  csrwr     zero, csr_tcfg
+
+  li.w t0, 0x1c008000 
+  csrwr t0, csr_eentry
+
+  jirl zero, ra, 0x0
+END(test5_init)
+
+LEAF(test6_init)
+  csrwr     zero, csr_prmd 
+  csrwr     zero, csr_era 
+  csrwr     zero, csr_eentry 
+  csrwr     zero, csr_badv 
+  csrwr     zero, csr_save0 
+  csrwr     zero, csr_save1
+  csrwr     zero, csr_save2 
+  csrwr     zero, csr_save3 
+  csrwr     zero, csr_tcfg
+  csrwr     zero, csr_tlbidx
+  csrwr     zero, csr_tlbehi 
+  csrwr     zero, csr_tlbelo0
+  csrwr     zero, csr_tlbelo1 
+  csrwr     zero, csr_asid
+  csrwr     zero, csr_tlbrentry
+
+  li.w      t0, 0x0 
+  li.w      t1, 0x3 
+  csrxchg t0, t1, csr_crmd 
+
+  jirl zero, ra, 0x0
+END(test6_init)
+
+LEAF(test8_init)
+  csrwr     zero, csr_prmd 
+  csrwr     zero, csr_era 
+  csrwr     zero, csr_eentry 
+  csrwr     zero, csr_badv 
+  csrwr     zero, csr_save0 
+  csrwr     zero, csr_save1
+  csrwr     zero, csr_save2 
+  csrwr     zero, csr_save3 
+  csrwr     zero, csr_tcfg
+  csrwr     zero, csr_tlbidx
+  csrwr     zero, csr_tlbehi 
+  csrwr     zero, csr_tlbelo0
+  csrwr     zero, csr_tlbelo1 
+  csrwr     zero, csr_asid 
+  csrwr     zero, csr_tlbrentry
+
+  li.w        t0, 0x8 
+  li.w        t1, 0x18 
+  csrxchg   t0, t1, csr_crmd
+  csrwr     zero, csr_dmw0 
+  csrwr     zero, csr_dmw1  
+
+  jirl zero, ra, 0x0
+END(test8_init)
+
+LEAF(tlb_init)
     
 #    addi.w s0, s0 ,1
 #    li.w   s2, 0x0
@@ -102,15 +180,6 @@ LEAF(tlb_initialization)
     csrwr  zero, csr_tlbelo1 
     csrwr  zero, csr_tlbidx
 
-###detect exception
-#    bne s2, zero, inst_error
-###score ++
-#    addi.w s3, s3, 1
-###output (s0<<24)|s3
-#inst_error:  
-#    slli.w t1, s0, 24
-#    or t0, t1, s3 
-#    st.w t0, s1, 0x0
     jirl zero, ra, 0x0
 
-END(tlb_initialization)
+END(tlb_init)

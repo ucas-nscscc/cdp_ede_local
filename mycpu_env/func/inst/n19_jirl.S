@@ -211,7 +211,6 @@ LEAF(n19_jirl_test)
     TEST_JIRL(0x87151984, 0x381fd770, 0x87151984, 0x381fd770)
 ###detect exception
     bne s2, zero, inst_error
-    nop
 ###score ++
     addi.w s3, s3, 1
 ###output (s0<<24)|s3
@@ -222,5 +221,4 @@ inst_error:
     NOP4
     st.w t0, s1, 0
     jirl zero, ra, 0
-    nop
 END(n19_jirl_test)

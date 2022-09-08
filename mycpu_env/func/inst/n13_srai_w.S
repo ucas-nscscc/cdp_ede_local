@@ -314,7 +314,6 @@ LEAF(n13_srai_w_test)
     TEST_SRAI_W(0x00000000, 0x00000000, 0x00000000)
 ###detect exception
     bne s2, zero, inst_error
-    nop
 ###score ++
     addi.w s3, s3, 1
 ###output (s0<<24)|s3
@@ -325,5 +324,4 @@ inst_error:
     NOP4
     st.w t0, s1, 0
     jirl zero, ra, 0
-    nop
 END(n13_srai_w_test)

@@ -117,54 +117,42 @@ LEAF(n52_adef_ex_test)
 ###should not generate adef excp
 #if TEST9
 ## 8
-  add.w   t2, ra, zero
+  add.w     t2, ra, zero
   li.w      t0, 0x9 
-  csrwr   t0, csr_dmw0
+  csrwr     t0, csr_dmw0
 
   li.w      t0, 0x3
   csrxchg t0, t0, csr_crmd  //usr mode
 
   li.w      t0, 0xd0010
   li.w      t1, 0x4c000020
-  st.w    t1, t0, 0 
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  jirl    ra, t0, 0
+  st.w      t1, t0, 0 
+  cacop     0x10, t0, 0x0
+  cacop     0x11, t0, 0x0
+  nop;nop;nop;nop;nop;
+  jirl      ra, t0, 0
 
 ## 9
   li.w      t0, 0xa0000000
   li.w      t1, 0x4c000020  //write in "jirl zero, ra, 0" inst
-  st.w    t1, t0, 0 
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  jirl    ra, t0, 0
+  st.w      t1, t0, 0 
+  cacop     0x10, t0, 0x0
+  cacop     0x11, t0, 0x0
+  nop;nop;nop;nop;nop;
+  jirl      ra, t0, 0
 
   LI_EXIMM(t0,s2,IMM_KERNEL)
   syscall 0      //return to kernel mode
 
   li.w      t0, 0x19 
-  csrwr   t0, csr_dmw0
+  csrwr     t0, csr_dmw0
  
-  add.w   ra, t2, zero
+  add.w     ra, t2, zero
 #endif
 
   li.w      t0, 0x0 
   li.w      t1, 0x3 
-  csrxchg t0, t1, csr_crmd 
+  csrxchg   t0, t1, csr_crmd 
 ###score +++
   addi.w  s3, s3, 1
 ###output (s0<<24)|s3 

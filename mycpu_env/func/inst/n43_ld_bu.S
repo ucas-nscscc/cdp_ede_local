@@ -135,7 +135,6 @@ LEAF(n43_ld_bu_test)
     TEST_LD_BU(0x00000000, 0xd0000, 0x0000000, 0x0000000, 0x00000000)
 ###detect exception
     bne s2, zero, inst_error
-    nop
 ###score ++
     addi.w s3, s3, 1
 ###output (s0<<24)|s3
