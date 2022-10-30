@@ -58,3 +58,6 @@ mycpu_env/func/obj/*
 mycpu_env/soc_verify/soc_hs_bram/rtl/xilinx_ip/*
 mycpu_env/soc_verify/soc_hs_bram/run_vivado/project/*
 !mycpu_env/soc_verify/soc_hs_bram/rtl/xilinx_ip/*.xci
+mycpu_env/soc_verify/soc_axi/rtl/xilinx_ip/*
+mycpu_env/soc_verify/soc_axi/run_vivado/project/*
+!mycpu_env/soc_verify/soc_axi/rtl/xilinx_ip/*.xci

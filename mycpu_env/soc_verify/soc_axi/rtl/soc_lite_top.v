@@ -83,7 +83,7 @@ module soc_lite_top #(parameter SIMULATION=1'b0)
 );
 //debug signals
 wire [31:0] debug_wb_pc;
-wire [3 :0] debug_wb_rf_we;
+wire [3 :0] debug_wb_rf_wen;
 wire [4 :0] debug_wb_rf_wnum;
 wire [31:0] debug_wb_rf_wdata;
 
@@ -315,7 +315,7 @@ mycpu_top u_cpu(
 
     //debug interface
     .debug_wb_pc      (debug_wb_pc      ),
-    .debug_wb_rf_we   (debug_wb_rf_we   ),
+    .debug_wb_rf_wen  (debug_wb_rf_wen   ),
     .debug_wb_rf_wnum (debug_wb_rf_wnum ),
     .debug_wb_rf_wdata(debug_wb_rf_wdata)
 );

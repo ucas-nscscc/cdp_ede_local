@@ -1,21 +1,21 @@
 module regfile(
-    input  wire        clk,
+    input         clk,
     // READ PORT 1
-    input  wire [ 4:0] raddr1,
-    output wire [31:0] rdata1,
+    input  [ 4:0] raddr1,
+    output [31:0] rdata1,
     // READ PORT 2
-    input  wire [ 4:0] raddr2,
-    output wire [31:0] rdata2,
+    input  [ 4:0] raddr2,
+    output [31:0] rdata2,
     // WRITE PORT
-    input  wire        we,       //write enable, HIGH valid
-    input  wire [ 4:0] waddr,
-    input  wire [31:0] wdata
+    input         we,       //write enable, HIGH valid
+    input  [ 4:0] waddr,
+    input  [31:0] wdata
 );
 reg [31:0] rf[31:0];
 
 //WRITE
 always @(posedge clk) begin
-    if (we) rf[waddr] <= wdata;
+    if (we) rf[waddr]<= wdata;
 end
 
 //READ OUT 1

@@ -1,8 +1,8 @@
 module alu(
-  input  wire [11:0] alu_op,
-  input  wire [31:0] alu_src1,
-  input  wire [31:0] alu_src2,
-  output wire [31:0] alu_result
+  input  [11:0] alu_op,
+  input  [31:0] alu_src1,
+  input  [31:0] alu_src2,
+  output [31:0] alu_result
 );
 
 wire op_add;   //add operation
@@ -46,24 +46,25 @@ wire [31:0] sr_result;
 
 
 // 32-bit adder
-wire [31:0] adder_a;
-wire [31:0] adder_b;
+wire [32:0] adder_a;
+wire [32:0] adder_b;
 wire        adder_cin;
-wire [31:0] adder_result;
+wire [32:0] adder_result;
 wire        adder_cout;
 
-assign adder_a   = alu_src1;
-assign adder_b   = (op_sub | op_slt | op_sltu) ? ~alu_src2 : alu_src2;  //src1 - src2 rj-rk
-assign adder_cin = (op_sub | op_slt | op_sltu) ? 1'b1      : 1'b0;
-assign {adder_cout, adder_result} = adder_a + adder_b + adder_cin;
+assign adder_cin      = op_sub | op_slt | op_sltu;
+assign adder_a        = {alu_src1, adder_cin};
+assign adder_b [32:1] = adder_cin ? ~alu_src2 : alu_src2;  //src1 - src2 rj-rk
+assign adder_b [0]    = adder_cin;
+assign {adder_cout, adder_result} = adder_a + adder_b;
 
 // ADD, SUB result
-assign add_sub_result = adder_result;
+assign add_sub_result = adder_result[32:1];
 
 // SLT result
 assign slt_result[31:1] = 31'b0;   //rj < rk 1
 assign slt_result[0]    = (alu_src1[31] & ~alu_src2[31])
-                        | ((alu_src1[31] ~^ alu_src2[31]) & adder_result[31]);
+                        | ((alu_src1[31] ~^ alu_src2[31]) & adder_result[32]);
 
 // SLTU result
 assign sltu_result[31:1] = 31'b0;
@@ -71,18 +72,18 @@ assign sltu_result[0]    = ~adder_cout;
 
 // bitwise operation
 assign and_result = alu_src1 & alu_src2;
-assign or_result  = alu_src1 | alu_src2 | alu_result;
+assign or_result  = alu_src1 | alu_src2;
 assign nor_result = ~or_result;
 assign xor_result = alu_src1 ^ alu_src2;
 assign lui_result = alu_src2;
 
 // SLL result
-assign sll_result = alu_src2 << alu_src1[4:0];   //rj << i5
+assign sll_result = alu_src1 << alu_src2[4:0];   //rj << i5
 
 // SRL, SRA result
-assign sr64_result = {{32{op_sra & alu_src2[31]}}, alu_src2[31:0]} >> alu_src1[4:0]; //rj >> i5
+assign sr64_result = {{32{op_sra & alu_src1[31]}}, alu_src1[31:0]} >> alu_src2[4:0]; //rj >> i5
 
-assign sr_result   = sr64_result[30:0];
+assign sr_result   = sr64_result[31:0];
 
 // final result mux
 assign alu_result = ({32{op_add|op_sub}} & add_sub_result)
