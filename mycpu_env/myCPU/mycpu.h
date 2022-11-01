@@ -130,4 +130,6 @@
     `define MMU_TO_IH_BUS_WD 108
     `define MMU_TO_PFS_BUS_WD 4
     `define MMU_TO_ES_BUS_WD 6
+    
+    `default_nettype wire
 `endif
