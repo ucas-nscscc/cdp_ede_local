@@ -62,8 +62,8 @@ mycpu_env/soc_verify/soc_axi/rtl/xilinx_ip/*
 mycpu_env/soc_verify/soc_axi/run_vivado/project/*
 !mycpu_env/soc_verify/soc_axi/rtl/xilinx_ip/*.xci
 
-# mycpu
-mycpu/*
-
 # ip_repo
 ip_repo/*
+
+# build
+build/*
