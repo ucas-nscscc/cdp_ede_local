@@ -37,7 +37,7 @@ ipx::archive_core /home/haooops/Documents/cdp_ede_local/build/mycpu/user.org_use
 ipx::move_temp_component_back -component [ipx::current_core]
 close_project -delete
 
-set_property  ip_repo_paths  {/home/haooops/Documents/cdp_ede_local/build/mycpu /home/haooops/Documents/cdp_ede_local/ip_repo} [current_project]
+set_property  ip_repo_paths  {/home/haooops/Documents/cdp_ede_local/build/mycpu /home/haooops/Documents/cdp_ede_local/build/ip_repo} [current_project]
 update_ip_catalog
 
 exit

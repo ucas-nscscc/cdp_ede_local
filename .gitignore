@@ -45,6 +45,13 @@
 Module.symvers
 modules.builtin
 
+# vivado projects
+*.ip_user_files/
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+
 #
 # git files that we don't want to ignore even if they are dot-files
 #
@@ -64,6 +71,3 @@ mycpu_env/soc_verify/soc_axi/run_vivado/project/*
 
 # ip_repo
 ip_repo/*
-
-# build
-build/*
