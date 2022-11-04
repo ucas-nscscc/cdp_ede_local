@@ -13,4 +13,17 @@ We use the Block Design provided by Vivado to establish *mysoc*, and a `Makefile
 - `clean`: clean Vivado jounral files
 - `dist_clean`: also clean ip repo and `mysoc`
 
+an example workflow:
+
+```sh
+$ git clone git@github.com:ucas-nscscc/cdp_ede_local.git -b <branch>
+$ make create_mysoc
+$ make run_mysoc
+...
+$ make dist_clean   # optional
+$ git add .
+$ git commit -m "<commit message>"
+$ git push
+```
+
 hint: put your RTL code of *mycpu* in `./src/myCPU` and IP cores in `./src/ip/*`.
