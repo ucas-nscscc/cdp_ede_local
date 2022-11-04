@@ -8,3 +8,5 @@ add_files [glob -nocomplain ./src/mysoc/bd/*.bd]
 add_files ./src/mysoc/mysoc_top.v
 
 add_files -fileset constrs_1 ./src/mysoc/constr
+
+exit
