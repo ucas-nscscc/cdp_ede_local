@@ -72,5 +72,12 @@ mycpu_env/soc_verify/soc_axi/rtl/xilinx_ip/*
 mycpu_env/soc_verify/soc_axi/run_vivado/project/*
 !mycpu_env/soc_verify/soc_axi/rtl/xilinx_ip/*.xci
 
-# ip_repo
-ip_repo/*
+# ip repo
+ip/*
+
+# mysoc project
+mysoc/*
+
+# block design
+src/mysoc/bd/*
+!src/mysoc/bd/*.bd
