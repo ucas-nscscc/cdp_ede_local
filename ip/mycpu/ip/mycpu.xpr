@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="/home/haooops/Documents/cdp_ede_local/ip/mycpu/ip/mycpu.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="775a9bb5ed7b46c3adcb2b2cff9ece7d"/>
+    <Option Name="Id" Val="75c38dc6d6ac45f1be9d7aa15a72d752"/>
     <Option Name="Part" Val="xc7a200tfbg676-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -21,8 +21,6 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../mycpu"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>

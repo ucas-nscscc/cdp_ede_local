@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="/home/haooops/Documents/cdp_ede_local/ip/confreg/ip/confreg.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="a8293f77d7c44db8a5169a11686dcbf4"/>
+    <Option Name="Id" Val="f98845cba7de4622910d24e45ff0c469"/>
     <Option Name="Part" Val="xc7a200tfbg676-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>

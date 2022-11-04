@@ -1371,7 +1371,7 @@
       <xilinx:displayName>confreg_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-11-04T02:57:52Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2022-11-04T04:17:19Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.2</xilinx:xilinxVersion>
