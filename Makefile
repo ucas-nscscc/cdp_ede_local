@@ -21,7 +21,7 @@ all: mycpu_ip confreg_ip
 mycpu_ip: $(MYCPU_SRC) $(MYCPU_IP_SRC)
 	@echo "Generating" $@
 	@rm -rf $(MYCPU_IP_HOME)
-	@echo "echo \"`cat scripts/package_ip_template.tcl`\"" | \
+	@echo "echo \"`cat $(SCRIPTS_HOME)/package_ip_template.tcl`\"" | \
 		SOURCE_HOME=$(MYCPU_HOME) IP_PRJ_HOME=$(MYCPU_IP_HOME)  IP_SOURCE_HOME=$(MYCPU_HOME)/ip bash > \
 		$(SCRIPTS_HOME)/tmp.tcl
 	@vivado -mode tcl -source $(SCRIPTS_HOME)/tmp.tcl -nojournal -notrace
@@ -30,7 +30,7 @@ mycpu_ip: $(MYCPU_SRC) $(MYCPU_IP_SRC)
 confreg_ip: $(CONFREG_SRC)
 	@echo "Generating" $@
 	@rm -rf $(CONFREG_IP_HOME)
-	@echo "echo \"`cat scripts/package_ip_template.tcl`\"" | \
+	@echo "echo \"`cat $(SCRIPTS_HOME)/package_ip_template.tcl`\"" | \
 		SOURCE_HOME=$(CONFREG_HOME) IP_PRJ_HOME=$(CONFREG_IP_HOME)  IP_SOURCE_HOME=. bash > \
 		$(SCRIPTS_HOME)/tmp.tcl
 	@vivado -mode tcl -source $(SCRIPTS_HOME)/tmp.tcl -nojournal -notrace
