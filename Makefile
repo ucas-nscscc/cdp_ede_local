@@ -1,11 +1,13 @@
 IP_HOME:=./ip
 
-MYCPU_HOME:=./src/myCPU
+SRC_HOME:=./src
+
+MYCPU_HOME:=$(SRC_HOME)/myCPU
 MYCPU_SRC:=$(shell find $(MYCPU_HOME) -name "*.v")
 MYCPU_SRC+=$(shell find $(MYCPU_HOME) -name "*.h")
 MYCPU_IP_SRC:=$(shell find $(MYCPU_HOME) -name "*.xci")
 
-CONFREG_HOME:=./src/CONFREG
+CONFREG_HOME:=$(SRC_HOME)/CONFREG
 CONFREG_SRC:=$(CONFREG_HOME)/confreg.v
 
 SCRIPTS_HOME:=./scripts
