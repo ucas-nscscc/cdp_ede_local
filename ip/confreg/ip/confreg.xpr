@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="/home/haooops/Documents/cdp_ede_local/ip/confreg/ip/confreg.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="afb2d0ecbe7948aa8b06f9a72902cc9e"/>
+    <Option Name="Id" Val="dc0bf442dbe64dab9f2bbe6afa2a8139"/>
     <Option Name="Part" Val="xc7a200tfbg676-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -58,7 +58,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../mycpu_env/soc_verify/soc_axi/rtl/CONFREG/confreg.v">
+      <File Path="$PPRDIR/../../../src/CONFREG/confreg.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
