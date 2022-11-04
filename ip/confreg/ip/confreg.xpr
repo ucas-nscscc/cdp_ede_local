@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="/home/haooops/Documents/cdp_ede_local/build/confreg/confreg.xpr">
+<Project Version="7" Minor="44" Path="/home/haooops/Documents/cdp_ede_local/ip/confreg/ip/confreg.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="3bb3583b3b5c4c1396dc6c085a96200a"/>
+    <Option Name="Id" Val="a8293f77d7c44db8a5169a11686dcbf4"/>
     <Option Name="Part" Val="xc7a200tfbg676-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -58,14 +58,14 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../mycpu_env/soc_verify/soc_axi/rtl/CONFREG/confreg.v">
+      <File Path="$PPRDIR/../../../mycpu_env/soc_verify/soc_axi/rtl/CONFREG/confreg.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/component.xml">
+      <File Path="$PPRDIR/../component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
