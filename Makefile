@@ -21,7 +21,7 @@ MYSOC_PRJ_HOME:=./mysoc
 .PHONY: clean dist_clean
 
 # Generate ip core for mycpu and confreg
-all: ip_repo
+all: create_mysoc run_mysoc
 
 ip_repo: mycpu_ip confreg_ip
 
