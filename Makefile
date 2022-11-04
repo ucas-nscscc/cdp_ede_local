@@ -1,12 +1,11 @@
 IP_HOME:=./ip
 
-MYCPU_HOME:=./mycpu_env/myCPU
+MYCPU_HOME:=./src/myCPU
 MYCPU_SRC:=$(shell find $(MYCPU_HOME) -name "*.v")
 MYCPU_SRC+=$(shell find $(MYCPU_HOME) -name "*.h")
 MYCPU_IP_SRC:=$(shell find $(MYCPU_HOME) -name "*.xci")
 
-SOC_AXI_HOME:=./mycpu_env/soc_verify/soc_axi/rtl
-CONFREG_HOME:=$(SOC_AXI_HOME)/CONFREG
+CONFREG_HOME:=./src/CONFREG
 CONFREG_SRC:=$(CONFREG_HOME)/confreg.v
 
 SCRIPTS_HOME:=./scripts
@@ -16,6 +15,7 @@ CONFREG_IP_HOME:=$(IP_HOME)/confreg
 
 .PHONY: clean mycpu_ip confreg_ip
 
+# Generate ip core for mycpu and confreg
 all: mycpu_ip confreg_ip
 
 mycpu_ip: $(MYCPU_SRC) $(MYCPU_IP_SRC)
@@ -35,6 +35,10 @@ confreg_ip: $(CONFREG_SRC)
 		$(SCRIPTS_HOME)/tmp.tcl
 	@vivado -mode tcl -source $(SCRIPTS_HOME)/tmp.tcl -nojournal -notrace
 	@rm $(SCRIPTS_HOME)/tmp.tcl
+
+# Run vivado for mysoc
+run_soc:
+	@vivado ./mysoc/mysoc.xpr &
 
 clean:
 	rm -rf ./vivado*

@@ -52,6 +52,7 @@ modules.builtin
 *.cache/
 *.hw/
 *.log
+vivado*
 
 #
 # git files that we don't want to ignore even if they are dot-files
