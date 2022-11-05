@@ -1,6 +1,6 @@
 `include "mycpu.h"
 module mycpu_top(
-    ////axi interface
+    //axi interface
     input         aclk,
     input         aresetn,
     //read request
@@ -112,7 +112,7 @@ mycpu_sram_core u_mycpu_sram_core(
 );
 
 sram_to_axi_bridge u_sram_to_axi_bridge(
-    ////axi interface
+    //axi interface
     .aclk               (aclk           ),
     .aresetn            (aresetn        ),
 
@@ -162,7 +162,7 @@ sram_to_axi_bridge u_sram_to_axi_bridge(
     .bvalid             (bvalid         ),
     .bready             (bready         ),
 
-    ////inst sram interface
+    //inst sram interface
     .inst_sram_req      (inst_sram_req  ),
     .inst_sram_wr       (inst_sram_wr   ),
     .inst_sram_size     (inst_sram_size ),
@@ -173,7 +173,7 @@ sram_to_axi_bridge u_sram_to_axi_bridge(
     .inst_sram_data_ok  (inst_sram_data_ok),
     .inst_sram_rdata    (inst_sram_rdata),
 
-    ////data sram interface
+    //data sram interface
     .data_sram_req      (data_sram_req  ),
     .data_sram_wr       (data_sram_wr   ),
     .data_sram_size     (data_sram_size ),
