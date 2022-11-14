@@ -2,6 +2,7 @@
 module mycpu_sram_core(
     input         clk,
     input         resetn,
+    input  [ 7:0] hw_int_in,
     // inst sram interface
     output        inst_sram_req,
     output        inst_sram_wr,
@@ -73,10 +74,10 @@ wire [13:0] ws_csr_rnum;
 wire [31:0] ws_csr_wmask;
 wire [31:0] ws_csr_wvalue;
 wire [31:0] ws_csr_rvalue;
-wire [ 7:0] hw_int_in;
+// wire [ 7:0] hw_int_in;
 wire        ipi_int_in;
 wire        ws_valid;
-assign hw_int_in = 8'b0;
+// assign hw_int_in = 8'b0;
 assign ipi_int_in = 1'b0;
 
 wire [`TLB_INV_BUS_WD-1:0] tlb_inv_bus;

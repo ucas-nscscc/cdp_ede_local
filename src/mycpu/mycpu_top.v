@@ -47,7 +47,9 @@ module mycpu_top(
     input  [ 3:0] bid,
     input  [ 1:0] bresp,
     input         bvalid,
-    output        bready
+    output        bready,
+
+    input  [ 7:0] hw_int_in
     
     ////trace debug interface
 //    output [31:0] debug_wb_pc,
@@ -81,6 +83,7 @@ module mycpu_top(
 mycpu_sram_core u_mycpu_sram_core(
     .clk                (aclk           ),
     .resetn             (aresetn        ),
+    .hw_int_in          (hw_int_in      ),
 
     //inst sram interface
     .inst_sram_req      (inst_sram_req  ),
