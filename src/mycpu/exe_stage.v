@@ -152,7 +152,7 @@ assign {es_ertn        ,  //183:183 ->
         es_imm         ,  //127:96
         es_rj_value    ,  //95 :64
         es_rkd_value   }  //63 :32
- = ds_to_es_bus_r[`DS_TO_ES_BUS_WD-16:32] & {(`DS_TO_ES_BUS_WD-46){~es_ex_backward[7] && ~es_ex_backward[5]}};//!change,debug
+ = ds_to_es_bus_r[`DS_TO_ES_BUS_WD-16:32] & {(`DS_TO_ES_BUS_WD-46){~|es_ex_backward}};//!change,debug
  //!bug 1 try 3 :+5 2 0 -> 7 5 success
 assign  es_pc             //31 :0
          = ds_to_es_bus_r[31:0];

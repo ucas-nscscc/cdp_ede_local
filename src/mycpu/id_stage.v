@@ -219,8 +219,8 @@ assign br_bus       = {br_taken,br_target};
 
 assign rdtimeh = inst_rdcntvh_w;
 assign rdtimel = inst_rdcntvl_w;
-assign ds_to_es_bus = {tlb_op      ,  //193:189
-                       ds_ex_gather,  //188:184 +5
+assign ds_to_es_bus = {tlb_op      ,  //198:194
+                       ds_ex_gather,  //193:184
                        ds_ertn     ,  //183:183
                        rdtimeh     ,  //182:182
                        rdtimel     ,  //181:181

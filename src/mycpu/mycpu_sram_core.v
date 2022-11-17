@@ -27,7 +27,8 @@ module mycpu_sram_core(
     output [31:0] debug_wb_pc,
     output [ 3:0] debug_wb_rf_wen,
     output [ 4:0] debug_wb_rf_wnum,
-    output [31:0] debug_wb_rf_wdata
+    output [31:0] debug_wb_rf_wdata,
+    output [31:0] csr_estat_rvalue
 );
 reg         reset;
 always @(posedge clk) reset <= ~resetn; 
@@ -413,7 +414,8 @@ csr_regfile csr_regfile(
     .hw_int_in      (hw_int_in      ),
     .ipi_int_in     (ipi_int_in     ),
     .pc_to_fs       (pc_to_fs       ),
-    .has_int        (has_int        )
+    .has_int        (has_int        ),
+    .csr_estat_rvalue(csr_estat_rvalue)
 );
 
 tlb u_tlb(

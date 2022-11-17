@@ -1,6 +1,6 @@
 `include "mycpu.h"
 module mycpu_top(
-    //axi interface
+    ////axi interface
     input         aclk,
     input         aresetn,
     //read request
@@ -49,13 +49,14 @@ module mycpu_top(
     input         bvalid,
     output        bready,
 
-    input  [ 7:0] hw_int_in
+    input  [ 7:0] hw_int_in,
     
-    ////trace debug interface
-//    output [31:0] debug_wb_pc,
-//    output [ 3:0] debug_wb_rf_wen,
-//    output [ 4:0] debug_wb_rf_wnum,
-//    output [31:0] debug_wb_rf_wdata
+    //trace debug interface
+    output [31:0] debug_wb_pc,
+    output [ 3:0] debug_wb_rf_write_enable,
+    output [ 4:0] debug_wb_rf_wnum,
+    output [31:0] debug_wb_rf_write_data,
+    output [31:0] csr_estat_rvalue
 );
 
     //inst sram interface
@@ -105,17 +106,18 @@ mycpu_sram_core u_mycpu_sram_core(
     .data_sram_wdata    (data_sram_wdata),
     .data_sram_addr_ok  (data_sram_addr_ok),
     .data_sram_data_ok  (data_sram_data_ok),
-    .data_sram_rdata    (data_sram_rdata)
+    .data_sram_rdata    (data_sram_rdata),
 
-    //trace debug interface
-//    .debug_wb_pc        (debug_wb_pc    ),
-//    .debug_wb_rf_wen    (debug_wb_rf_wen),
-//    .debug_wb_rf_wnum   (debug_wb_rf_wnum),
-//    .debug_wb_rf_wdata  (debug_wb_rf_wdata)
+    // trace debug interface
+    .debug_wb_pc        (debug_wb_pc    ),
+    .debug_wb_rf_wen    (debug_wb_rf_write_enable),
+    .debug_wb_rf_wnum   (debug_wb_rf_wnum),
+    .debug_wb_rf_wdata  (debug_wb_rf_write_data),
+    .csr_estat_rvalue(csr_estat_rvalue)
 );
 
 sram_to_axi_bridge u_sram_to_axi_bridge(
-    //axi interface
+    ////axi interface
     .aclk               (aclk           ),
     .aresetn            (aresetn        ),
 
@@ -165,7 +167,7 @@ sram_to_axi_bridge u_sram_to_axi_bridge(
     .bvalid             (bvalid         ),
     .bready             (bready         ),
 
-    //inst sram interface
+    ////inst sram interface
     .inst_sram_req      (inst_sram_req  ),
     .inst_sram_wr       (inst_sram_wr   ),
     .inst_sram_size     (inst_sram_size ),
@@ -176,7 +178,7 @@ sram_to_axi_bridge u_sram_to_axi_bridge(
     .inst_sram_data_ok  (inst_sram_data_ok),
     .inst_sram_rdata    (inst_sram_rdata),
 
-    //data sram interface
+    ////data sram interface
     .data_sram_req      (data_sram_req  ),
     .data_sram_wr       (data_sram_wr   ),
     .data_sram_size     (data_sram_size ),

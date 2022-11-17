@@ -26,7 +26,8 @@ module csr_regfile(
     input  [7:0]  hw_int_in,
     input         ipi_int_in,
     output [31:0] pc_to_fs,
-    output        has_int
+    output        has_int,
+    output [31:0] csr_estat_rvalue
 );
 
 //csr_regs
@@ -130,7 +131,7 @@ reg [31:0] timer_cnt;
 wire [31:0] csr_crmd_rvalue;
 wire [31:0] csr_prmd_rvalue;
 wire [31:0] csr_ecfg_rvalue;
-wire [31:0] csr_estat_rvalue;
+// wire [31:0] csr_estat_rvalue;
 wire [31:0] csr_era_rvalue;
 wire [31:0] csr_badv_rvalue;
 wire [31:0] csr_eentry_rvalue;
